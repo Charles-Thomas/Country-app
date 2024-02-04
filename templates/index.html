@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries of the World</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+<body>
+    <h1>Country App</h1>
+    <div class="content"> 
+        <form method="POST">
+            <p>
+                <b><label for="content">Countries of the World</label></b>
+                <p>
+                    <input type="text" name="content" placeholder="Countries">
+                </p>
+            </p>
+        </form>
+        <hr>
+        {% for country in countries %}
+        <div class="country">
+            
+            <p>{{ country['country-name'] }}</p>
+            <p>{{ country['country-info'] }}</p>
+            <p>{{ country['country-capital'] }}</p>
+            <p>{{ country['country-area'] }}</p>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
